@@ -1,0 +1,4 @@
+#Program outputs all valid names and numbers them. 
+1. The first letter and third letters of the name must always be the same.
+2. The name is only ‘valid’ if, when you sum up the values of the three letters (a = 1, b = 2etc.),
+the sum is prime.
