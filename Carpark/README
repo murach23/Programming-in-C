@@ -1,0 +1,7 @@
+##Aim of this project is to get out car from the carpark. During turn vehicle 
+is allowed to move forwards or backwards one square. Once the front of vehicle touches 
+exit, it is deemed to have exited the car park.
+Brute-force algorithm is used for searching over all moves. There are two structs,
+the first one stores information of each carpark and if it is unique adds to the end of the list.
+Second struct stores information about each car.
+To compile the code, firstly type "clang carpark.c -o carpark -lm" , then "./carpark 6x6.txt".
