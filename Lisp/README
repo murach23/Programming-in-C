@@ -1,0 +1,10 @@
+The project stores lists that can store other lists. To make that happen there is 
+main struct that has two pointers. One car pointer that goes downwards and cdr that goes 
+horizontally. 
+Simple example of the list (1,2)
+[*|*] - - - >[*|*] - - - > NIL
+|             |
+v             v
+1             2
+Some of the files were provided, I have written code for linked.c and specific.h. To compile the code
+Makefile must be used.
