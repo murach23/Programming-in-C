@@ -1,0 +1,8 @@
+//To test the software, I am doing tests in the test1 function. 
+//Those tests assume correct inputs, because when the error 
+//occurs the code EXIT and points what kind of error happend and which line. 
+//I am checking for example, current token positions, token posistions, expected
+//outputs. Also, I check in some functions if it does not enter ERRORS,
+//by adding additional test_variable. I was not sure If I could do that
+//(adding my own tests .ncl), so if I should not have, I am sorry for any inconvenience.
+//I created my own tests .ncl that are more focused on wrong grammar.

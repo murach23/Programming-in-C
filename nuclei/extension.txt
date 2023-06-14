@@ -1,0 +1,4 @@
+//As an extension I extended grammar for INTFUNC. I added MINUS, MULTIPLY DIVIDE: 
+<INTFUNC> ::= "PLUS" <LIST> <LIST> | "MINUS" <LIST> <LIST> | 
+              "MULTIPLY" <LIST> <LIST> | "DIVIDE" <LIST> <LIST> | "LENGTH" <LIST>
+//However, I applied this extensions into my existing code.
