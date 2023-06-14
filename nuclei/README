@@ -1,0 +1,37 @@
+NUCLEI
+The programming language LISP, developed in 1958, is one of the oldest languages still in
+common use. develop a very simple langauge inspired by these concepts called NUCLEI (Neill’s
+UnCommon Lisp Expression Interpreter). Implement a recursive descent parser - this will report whether
+or not a given NUCLEI program follows the formal grammar or not. The input file is
+specified via argv[1] - and if the file is valid the output is :
+Parsed OK
+Otherwise, a suitbale error message is given and a non-zero exit is made.
+Extend the parser, so it becomes an interpreter.
+
+The Formal Grammar
+# (N)eill’s (U)n(C)ommon (L)isp (E)xpression (I)nterpreter
+<PROG> ::= "(" <INSTRCTS>
+<INSTRCTS> ::= <INSTRCT> <INSTRCTS> | ")"
+<INSTRCT> ::= "(" <FUNC> ")"
+<FUNC> ::= <RETFUNC> | <IOFUNC> | <IF> | <LOOP>
+<RETFUNC> ::= <LISTFUNC> | <INTFUNC> | <BOOLFUNC>
+<LISTFUNC> ::= "CAR" <LIST> | "CDR" <LIST> | "CONS" <LIST> <LIST>
+<INTFUNC> ::= "PLUS" <LIST> <LIST> | "LENGTH" <LIST>
+<BOOLFUNC> ::= "LESS" <LIST> <LIST> | "GREATER" <LIST> <LIST> | "EQUAL" <LIST> <LIST>
+<IOFUNC> ::= <SET> | <PRINT>
+<SET> ::= "SET" <VAR> <LIST>
+<PRINT> ::= "PRINT" <LIST> | "PRINT" <STRING>
+# (IF (CONDITION) ((IF-TRUE-INSTRCTS)) ((IF_FALSE_INSTRCTS)))
+<IF> ::= "IF" "(" <BOOLFUNC> ")" "(" <INSTRCTS> "(" <INSTRCTS>Chapter 12. Parsing Data
+<LOOP> ::= "WHILE""(" <BOOLFUNC> ")" "(" <INSTRCTS>
+<LIST> ::= <VAR> | <LITERAL> | "NIL" | "(" <RETFUNC> ")"
+# Variables are just one letter A, B, Z etc.
+<VAR> ::= [A-Z]
+# For printing only:
+<STRING> ::= Double-quoted string constant e.g. "Hello, World!", or "FAILURE ?"
+# Since lists appear in bracket, to differentiate them
+# from instructions, we use ’single’ quotes:
+# For the parser, anything in single-quotes is fine - you don’t need to "investigate" whether it’s valid or not.
+<LITERAL> ::= Single-quoted list e.g. ’(1)’, ’(1 2 3 (4 5))’, or ’2’
+
+To compile this project, in the terminal type "make all", then either "./parse nameofthefile" or "./interp nameofthefile"
